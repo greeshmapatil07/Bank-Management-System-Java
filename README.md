@@ -34,7 +34,6 @@ A console-based Bank Management System developed in Java to demonstrate all majo
 - ✅ Method Overriding
 - ✅ Runtime Polymorphism
 - ✅ Constructor Chaining
-- ✅ Encapsulation
 - ✅ `super` Keyword
 
 ---
