@@ -1,37 +1,68 @@
 package com.bankms;
-
+import java.util.Scanner;
 public class BankManagementMain {
 
 	public static void main(String[] args) {
 		 
+		Scanner sc = new Scanner(System.in);
 
-		 BankAccount acc = new SavingsAccount(101, "Rahul", 50000);
-	        acc.displayDetails();
-	        acc.calculateInterest();
+        System.out.println("----- Bank Management System -----");
 
-	        System.out.println();
+        System.out.print("Enter Account Number: ");
+        int accountNumber = sc.nextInt();
 
-	        BankAccount acc1= new PremiumSavingsAcc(102, "Priya", 70000);
-	        acc1.displayDetails();
-	        acc1.calculateInterest();
+        sc.nextLine(); 
 
-	        System.out.println();
+        System.out.print("Enter Account Holder Name: ");
+        String accountHolder = sc.nextLine();
 
-	        BankAccount acc2 = new CurrentAccount(103, "Amit", 90000);
-	        acc2.displayDetails();
-	        acc2.calculateInterest();
+        System.out.print("Enter Balance: ");
+        double balance = sc.nextDouble();
 
-	        System.out.println();
+        System.out.println();
+        System.out.println("Select Account Type");
+        System.out.println("1. Savings Account");
+        System.out.println("2. Premium Savings Account");
+        System.out.println("3. Current Account");
+        System.out.println("4. Salary Account");
+        System.out.println("5. Fixed Deposit Account");
+        System.out.print("Enter your choice: ");
 
-	        BankAccount acc3   = new SalaryAccount(104, "Sneha", 60000);
-	        acc3.displayDetails();
-	        acc3.calculateInterest();
+        int choice = sc.nextInt();
 
-	        System.out.println();
+        BankAccount account;
 
-	        BankAccount acc4= new FDAccount(105, "Rohan", 100000);
-	        acc4.displayDetails();
-	        acc4.calculateInterest();
+        switch(choice)
+        {
+            case 1:
+                account = new SavingsAccount(accountNumber, accountHolder, balance);
+                break;
+
+            case 2:
+                account = new PremiumSavingsAcc(accountNumber, accountHolder, balance);
+                break;
+
+            case 3:
+                account = new CurrentAccount(accountNumber, accountHolder, balance);
+                break;
+
+            case 4:
+                account = new SalaryAccount(accountNumber, accountHolder, balance);
+                break;
+
+            case 5:
+                account = new FDAccount(accountNumber, accountHolder, balance);
+                break;
+
+            default:
+                System.out.println("Invalid Choice");
+                sc.close();
+                return;
+        }
+
+        System.out.println("\n----- Account Details -----");
+        account.displayDetails();
+        account.calculateInterest();
 
 	}
 
