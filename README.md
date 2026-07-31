@@ -20,7 +20,7 @@ A console-based Bank Management System developed in Java to demonstrate all majo
 ## 🛠 Technologies Used
 
 - Java
-- Eclipse / Spring Tool Suite (STS)
+- Spring Tool Suite (STS)
 - Git
 - GitHub
 
